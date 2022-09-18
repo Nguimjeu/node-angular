@@ -1,0 +1,9 @@
+.git
+.idea
+.env
+.vscode
+Makefile
+README.md
+/.bash_aliases
+/.bashrc
+/.profile
