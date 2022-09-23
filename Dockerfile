@@ -16,6 +16,7 @@ RUN apk add --no-cache \
     bash \
     bash-completion \
     sudo \
+    chromium \
     shadow && \
     npm install -g npm@${NPM_VERSION} && \
     npm install -g @angular/cli && \
@@ -48,6 +49,9 @@ RUN set -xe; \
 #COPY ./.bash_aliases /home/${USERNAME}/.bash_aliases
 
 RUN echo "uid=${USER_ID}(${USERNAME}) gid=${GROUP_NAME}(${GROUP_ID})";
+
+ENV CHROME_BIN=/usr/bin/chromium-browser \
+    CHROME_PATH=/usr/lib/chromium/
 
 #RUN chown $USERNAME:$GROUP_NAME /home/${USERNAME}/.bashrc \
 #    /home/${USERNAME}/.profile \
